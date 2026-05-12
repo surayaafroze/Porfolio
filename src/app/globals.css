@@ -1,39 +1,63 @@
-/* @import url('https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Outfit:wght@300;400;500;600;700&display=swap');
+@import "tailwindcss";
 
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
-
-:root {
-  --teal: #009999;
-  --teal-dark: #007a7a;
-  --teal-light: #e0f5f5;
-  --text: #0d1117;
-  --text-muted: #6b7280;
-  --bg: #ffffff;
-  --bg2: #f8fafa;
-  --border: #e5e7eb;
+@theme {
+  --color-primary: #009999;
+  --color-primary-dark: #007a7a;
+  --color-primary-light: #e0f5f5;
+  --color-dark: #0a0a0a;
+  --color-light: #ffffff;
+  --color-muted: #64748b;
+  
+  --font-sans: var(--font-inter);
+  --font-outfit: var(--font-outfit);
 }
 
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
+@custom-variant dark (&:where(.dark, .dark *));
+
+@layer base {
+  html {
+    /* Removed smooth behavior as Lenis handles it now */
+  }
+  body {
+    @apply bg-white dark:bg-[#0a0a0a] text-slate-800 dark:text-slate-200 font-sans antialiased;
+  }
+  
+  /* Custom Scrollbar for a premium feel */
+  ::-webkit-scrollbar {
+    width: 6px;
+  }
+  ::-webkit-scrollbar-track {
+    background: transparent;
+  }
+  ::-webkit-scrollbar-thumb {
+    @apply bg-slate-300 dark:bg-slate-700 rounded-full;
+  }
+  ::-webkit-scrollbar-thumb:hover {
+    @apply bg-slate-400 dark:bg-slate-600;
+  }
 }
 
-body {
-  font-family: 'Outfit', sans-serif;
-  color: var(--text);
-  background: var(--bg);
-} */
- @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+@layer utilities {
+  .text-gradient {
+    @apply bg-clip-text text-transparent bg-gradient-to-r from-primary to-teal-400;
+  }
 
-body {
-  font-family: Inter, sans-serif;
-  background: white;
-  color: #0f172a;
-}
+  /* Glassmorphism utility */
+  .glass {
+    @apply bg-white/70 dark:bg-[#111111]/70 backdrop-blur-md border border-slate-200/50 dark:border-slate-800/50;
+  }
 
-:root {
-  --primary: #009999;
+  /* Premium bento card utility */
+  .bento-card {
+    @apply bg-slate-50/80 dark:bg-[#151515] rounded-3xl p-8 border border-slate-200 dark:border-slate-800/80 shadow-[0_8px_30px_rgb(0,0,0,0.04)] dark:shadow-[0_8px_30px_rgb(0,0,0,0.2)] hover:border-primary/30 transition-all duration-500 overflow-hidden relative;
+  }
+
+  /* Hide scrollbar for marquee */
+  .no-scrollbar::-webkit-scrollbar {
+    display: none;
+  }
+  .no-scrollbar {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
 }

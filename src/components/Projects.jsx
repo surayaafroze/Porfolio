@@ -1,51 +1,9 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { ExternalLink } from "lucide-react";
 import { FiGithub } from "react-icons/fi";
-
-const projects = [
-  {
-    title: "Keen Keeper",
-    description: "A comprehensive task management and productivity application designed to help users organize their daily workflows efficiently.",
-    tags: ["React", "Next.js", "Tailwind CSS"],
-    year: "2024",
-    liveUrl: "https://keen-keeper-project-kappa.vercel.app/",
-    githubUrl: "https://github.com/surayaafroze",
-  },
-  {
-    title: "Online Qurbani Hat",
-    description: "A digital marketplace connecting livestock sellers with buyers for Qurbani, featuring secure transactions and vendor management.",
-    tags: ["Next.js", "Tailwind CSS", "API"],
-    year: "2024",
-    liveUrl: "https://online-qurbani-hat.vercel.app/",
-    githubUrl: "https://github.com/surayaafroze",
-  },
-  {
-    title: "Dragon News",
-    description: "A dynamic news portal with category-based routing, user authentication, and real-time updates.",
-    tags: ["React", "Firebase", "React Router"],
-    year: "2023",
-    liveUrl: "https://dragon-news-project-five.vercel.app/category/01",
-    githubUrl: "https://github.com/surayaafroze",
-  },
-  {
-    title: "DigiTools Platform",
-    description: "A comprehensive platform offering various digital tools and utilities for modern workflows with a sleek React-based UI.",
-    tags: ["React", "CSS3", "Frontend"],
-    year: "2023",
-    liveUrl: "https://digitools-platform-react.netlify.app/",
-    githubUrl: "https://github.com/surayaafroze",
-  },
-  {
-    title: "Job Application Tracker",
-    description: "A specialized dashboard application to help job seekers track their applications, interviews, and offers in one place.",
-    tags: ["JavaScript", "HTML5", "CSS"],
-    year: "2023",
-    liveUrl: "https://job-application-tracker-javascript.netlify.app/",
-    githubUrl: "https://github.com/surayaafroze",
-  },
-];
+import Link from "next/link";
+import { projects } from "@/data/projects";
 
 export default function Projects() {
   return (
@@ -82,13 +40,24 @@ export default function Projects() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, margin: "-100px" }}
               transition={{ delay: i * 0.1, duration: 0.6, ease: "easeOut" }}
-              className="bento-card group flex flex-col justify-between min-h-[380px]"
+              className="bento-card group flex flex-col min-h-[450px]"
             >
-              {/* Overlay glow on hover */}
-              <div className="absolute inset-0 bg-gradient-to-br from-primary/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none" />
+              {/* Image Preview */}
+              <Link href={`/project/${p.id}`} className="relative h-56 mb-6 overflow-hidden rounded-2xl border border-slate-200 dark:border-slate-800 block">
+                <img 
+                  src={p.image} 
+                  alt={p.title} 
+                  className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-6">
+                  <span className="text-white text-sm font-bold flex items-center gap-2">
+                    Click to view details <ArrowRight size={14} />
+                  </span>
+                </div>
+              </Link>
 
-              <div className="relative z-10">
-                <div className="flex justify-between items-start mb-6">
+              <div className="relative z-10 flex-grow">
+                <div className="flex justify-between items-start mb-4">
                   <div className="flex flex-wrap gap-2">
                     {p.tags.slice(0, 2).map(tag => (
                       <span key={tag} className="bg-primary/10 dark:bg-primary/20 text-primary px-3 py-1 rounded-full text-xs font-semibold uppercase tracking-wider">
@@ -99,39 +68,33 @@ export default function Projects() {
                   <span className="text-slate-400 dark:text-slate-500 font-outfit text-sm font-bold">{p.year}</span>
                 </div>
 
-                <h3 className="text-3xl font-bold text-slate-900 dark:text-white leading-tight mb-4 group-hover:text-primary transition-colors duration-300">
+                <h3 className="text-2xl font-bold text-slate-900 dark:text-white leading-tight mb-3 group-hover:text-primary transition-colors duration-300">
                   {p.title}
                 </h3>
                 
-                <p className="text-slate-800 dark:text-slate-200 leading-relaxed font-light text-lg mb-8">
+                <p className="text-slate-700 dark:text-slate-300 leading-relaxed font-light text-base mb-6 line-clamp-2">
                   {p.description}
                 </p>
               </div>
 
               {/* Action Buttons */}
               <div className="relative z-10 flex items-center gap-4 mt-auto pt-6 border-t border-slate-100 dark:border-slate-800/80">
-                <a 
-                  href={p.liveUrl} 
-                  target="_blank" 
-                  rel="noreferrer"
-                  className="flex items-center gap-2 text-sm font-bold text-slate-900 dark:text-white hover:text-primary dark:hover:text-primary transition-colors"
+                <Link 
+                  href={`/project/${p.id}`}
+                  className="flex items-center gap-2 text-sm font-bold text-slate-900 dark:text-white hover:text-primary dark:hover:text-primary transition-colors bg-slate-100 dark:bg-slate-800/50 px-5 py-2.5 rounded-full"
                 >
-                  <ExternalLink size={18} />
-                  Live Demo
-                </a>
+                  View Details
+                </Link>
                 <a 
                   href={p.githubUrl} 
                   target="_blank" 
                   rel="noreferrer"
-                  className="flex items-center gap-2 text-sm font-bold text-slate-700 dark:text-slate-300 hover:text-slate-900 dark:hover:text-white transition-colors"
+                  className="flex items-center gap-2 text-sm font-bold text-slate-700 dark:text-slate-300 hover:text-slate-900 dark:hover:text-white transition-colors px-2"
                 >
                   <FiGithub size={18} />
-                  Source Code
+                  Source
                 </a>
               </div>
-
-              {/* Decorative shapes */}
-              <div className="absolute -bottom-20 -right-20 w-48 h-48 bg-primary/10 dark:bg-primary/20 rounded-full blur-[50px] group-hover:scale-150 transition-transform duration-700 pointer-events-none" />
             </motion.div>
           ))}
         </div>
@@ -153,5 +116,23 @@ export default function Projects() {
 
       </div>
     </section>
+  );
+}
+
+function ArrowRight({ size }) {
+  return (
+    <svg 
+      width={size} 
+      height={size} 
+      viewBox="0 0 24 24" 
+      fill="none" 
+      stroke="currentColor" 
+      strokeWidth="2" 
+      strokeLinecap="round" 
+      strokeLinejoin="round"
+    >
+      <path d="M5 12h14" />
+      <path d="m12 5 7 7-7 7" />
+    </svg>
   );
 }

@@ -87,13 +87,13 @@ export default function About() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.5, delay: 0.2 }}
-            className="bento-card bg-primary text-white border-none group-hover:border-none flex flex-col items-center justify-center text-center"
+            className="bento-card bg-white dark:bg-[#111] border-primary/30 dark:border-primary/20 flex flex-col items-center justify-center text-center group"
           >
-            <div className="font-outfit text-5xl font-bold mb-2 text-slate-900 dark:text-white">1+</div>
-            <div className="font-medium text-sm tracking-wider uppercase  text-slate-900 dark:text-white">Years Experience</div>
+            <div className="font-outfit text-5xl font-bold mb-2 text-primary">1+</div>
+            <div className="font-medium text-sm tracking-wider uppercase text-slate-800 dark:text-slate-200">Years Experience</div>
             
             {/* Overlay glow */}
-            <div className="absolute inset-0 bg-white/10 blur-2xl rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+            <div className="absolute inset-0 bg-primary/5 blur-2xl rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
           </motion.div>
 
           <motion.div

@@ -8,13 +8,13 @@ const educationData = [
   {
     institution: "Khulna University",
     degree: "BSS Honors in Sociology",
-    year: "2022–Present",
+    year: "2023–Present",
     grade: "CGPA: 3.40/4.00",
   },
   {
     institution: "Uttara High School and College",
     location: "Uttara, Dhaka",
-    degree: "Higher Secondary Certificate (Commerce)",
+    degree: "Higher Secondary Certificate",
     year: "2019–2021",
     grade: "GPA: 5.00/5.00",
   },

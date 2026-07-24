@@ -110,7 +110,7 @@ export default function Navbar() {
                 download
                 className="hidden md:inline-flex items-center justify-center px-6 py-2.5 text-sm font-medium text-white bg-primary rounded-full hover:bg-primary-dark transition-colors duration-300 shadow-sm shadow-primary/20"
               >
-                Resume
+                Download Resume
               </a>
 
               {/* Mobile Menu Toggle */}

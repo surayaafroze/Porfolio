@@ -106,10 +106,11 @@ export default function Navbar() {
 
               {/* CTA Desktop */}
               <a
-                href="#contact"
+                href="/resume.pdf"
+                download
                 className="hidden md:inline-flex items-center justify-center px-6 py-2.5 text-sm font-medium text-white bg-primary rounded-full hover:bg-primary-dark transition-colors duration-300 shadow-sm shadow-primary/20"
               >
-                Contact
+                Resume
               </a>
 
               {/* Mobile Menu Toggle */}
@@ -168,11 +169,12 @@ export default function Navbar() {
                   className="mt-8 pt-8 border-t border-slate-100 dark:border-slate-800"
                 >
                   <a
-                    href="#contact"
+                    href="/resume.pdf"
+                    download
                     onClick={() => setIsOpen(false)}
                     className="inline-flex items-center justify-center w-full py-4 bg-primary text-white text-lg font-bold rounded-2xl shadow-lg shadow-primary/20"
                   >
-                    Let's Talk
+                    Download Resume
                   </a>
                 </motion.div>
               </div>

@@ -2,7 +2,7 @@
 
 import { motion } from "framer-motion";
 import MagneticButton from "./MagneticButton";
-import { ArrowRight } from "lucide-react";
+import { ArrowRight, Download } from "lucide-react";
 
 export default function Hero() {
   const text = "I'm Suraya, a Frontend Web Developer.".split(" ");
@@ -10,7 +10,7 @@ export default function Hero() {
   return (
     <section
       id="home"
-      className="relative min-h-[100dvh] flex items-center pt-28 pb-20 overflow-hidden bg-white dark:bg-[#0a0a0a]"
+      className="relative min-h-[100dvh] flex items-center pt-32 pb-16 md:pt-28 md:pb-20 overflow-hidden bg-white dark:bg-[#0a0a0a]"
     >
       {/* Premium glowing background elements */}
       <div className="absolute top-[10%] right-[10%] w-[300px] md:w-[500px] h-[300px] md:h-[500px] bg-primary/5 dark:bg-primary/10 blur-[80px] md:blur-[120px] rounded-full pointer-events-none" />
@@ -31,7 +31,7 @@ export default function Hero() {
               &mdash;Hello There!
             </motion.div>
 
-            <h1 className="font-outfit text-3xl sm:text-5xl md:text-6xl lg:text-7xl font-bold leading-[1.2] md:leading-[1.1] tracking-tight text-slate-900 dark:text-white mb-6 md:mb-8 flex flex-wrap justify-center lg:justify-start gap-x-3 md:gap-x-4 gap-y-1 md:gap-y-2">
+            <h1 className="font-outfit text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold leading-[1.2] md:leading-[1.1] tracking-tight text-slate-900 dark:text-white mb-6 md:mb-8 flex flex-wrap justify-center lg:justify-start gap-x-3 md:gap-x-4 gap-y-1 md:gap-y-2">
               {text.map((word, i) => (
                 <motion.span
                   key={i}
@@ -62,7 +62,7 @@ export default function Hero() {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 1, duration: 0.8 }}
-              className="flex flex-col sm:flex-row items-center gap-4 md:gap-6 w-full sm:w-auto"
+              className="flex flex-col sm:flex-row flex-wrap items-center gap-4 md:gap-6 w-full sm:w-auto"
             >
               <MagneticButton className="w-full sm:w-auto">
                 <a
@@ -71,6 +71,17 @@ export default function Hero() {
                 >
                   View Projects
                   <ArrowRight size={18} className="group-hover:translate-x-1 transition-transform" />
+                </a>
+              </MagneticButton>
+
+              <MagneticButton className="w-full sm:w-auto">
+                <a
+                  href="/resume.pdf"
+                  download
+                  className="group flex items-center justify-center gap-3 px-8 py-4 bg-transparent dark:bg-[#111111] text-slate-900 dark:text-white border border-slate-300 dark:border-slate-800 font-medium rounded-full hover:border-primary dark:hover:border-primary transition-all duration-300 w-full sm:w-auto"
+                >
+                  Download Resume
+                  <Download size={18} className="group-hover:-translate-y-1 transition-transform" />
                 </a>
               </MagneticButton>
 
@@ -126,15 +137,15 @@ export default function Hero() {
 
         </div>
 
-        {/* Scroll Indicator */}
+        {/* Scroll Indicator - Hidden on mobile to prevent overlap */}
         <motion.div
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ delay: 1.5, duration: 1 }}
-          className="absolute bottom-6 md:bottom-10 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2"
+          className="absolute bottom-6 md:bottom-10 left-1/2 -translate-x-1/2 hidden md:flex flex-col items-center gap-2"
         >
-          <span className="text-[10px] md:text-xs font-medium text-slate-600 dark:text-slate-400 uppercase tracking-widest">Scroll</span>
-          <div className="w-[1px] h-8 md:h-12 bg-slate-200 dark:bg-slate-800 relative overflow-hidden">
+          <span className="text-xs font-medium text-slate-600 dark:text-slate-400 uppercase tracking-widest">Scroll</span>
+          <div className="w-[1px] h-12 bg-slate-200 dark:bg-slate-800 relative overflow-hidden">
             <motion.div
               animate={{ y: ["-100%", "100%"] }}
               transition={{ repeat: Infinity, duration: 1.5, ease: "linear" }}

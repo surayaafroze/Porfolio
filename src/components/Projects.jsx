@@ -43,7 +43,7 @@ export default function Projects() {
               className="bento-card group flex flex-col min-h-[450px]"
             >
               {/* Image Preview */}
-              <Link href={`/project/${p.id}`} className="relative h-56 mb-6 overflow-hidden rounded-2xl border border-slate-200 dark:border-slate-800 block">
+              <Link href={`/project/${p.id}`} className="relative aspect-video sm:aspect-auto sm:h-56 lg:h-64 mb-6 overflow-hidden rounded-2xl border border-slate-200 dark:border-slate-800 block">
                 <img 
                   src={p.image} 
                   alt={p.title} 

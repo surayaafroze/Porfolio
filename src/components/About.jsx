@@ -54,7 +54,10 @@ export default function About() {
                 I am a dedicated frontend developer focused on building modern, animated, and user-friendly web experiences using React, Next.js, and modern web technologies.
               </p>
               <p>
-                Currently based in Khulna, Bangladesh, I love creating visually engaging interfaces that combine premium UI design with buttery-smooth interactions.
+                My programming journey started out of a deep curiosity for how websites come to life. Over the years, I've transformed that curiosity into a career, moving from building simple static pages to crafting complex, full-featured web applications. I truly enjoy the intersection of logic and design.
+              </p>
+              <p>
+                Currently based in Khulna, Bangladesh, I love creating visually engaging interfaces that combine premium UI design with buttery-smooth interactions. When I'm not coding, you can often find me painting landscapes, exploring new creative hobbies, or unwinding with a good book.
               </p>
             </div>
             

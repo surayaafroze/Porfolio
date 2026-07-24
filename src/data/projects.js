@@ -10,6 +10,8 @@ export const projects = [
     liveUrl: "https://keen-keeper-project-kappa.vercel.app/",
     githubUrl: "https://github.com/surayaafroze",
     features: ["Real-time Sync", "Drag-and-Drop", "Cloud Storage", "Role-based Auth", "Analytics Dashboard"],
+    challenges: "One of the major challenges was implementing real-time synchronization without degrading performance or causing race conditions between multiple connected clients. Handling drag-and-drop operations efficiently with large datasets also required significant state management optimization.",
+    futurePlans: "I plan to introduce AI-driven task prioritization to help users focus on high-impact work. Additionally, building native mobile apps and integrating with popular calendars like Google Calendar or Outlook is on the roadmap.",
   },
   {
     id: "qurbani-hat",
@@ -22,6 +24,8 @@ export const projects = [
     liveUrl: "https://online-qurbani-hat.vercel.app/",
     githubUrl: "https://github.com/surayaafroze",
     features: ["Vendor Dashboard", "Payment Gateway", "Order Tracking", "Admin Panel", "Live Chat Support"],
+    challenges: "Managing state across complex multi-step checkout processes and ensuring data consistency during high-traffic transactions was difficult. Integrating the payment gateway securely while keeping the user experience seamless was also a notable hurdle.",
+    futurePlans: "Future updates will include an integrated bidding system, better livestock video showcase features, and an AI-based weight and price estimation tool to aid buyers in making informed decisions.",
   },
   {
     id: "dragon-news",
@@ -34,6 +38,8 @@ export const projects = [
     liveUrl: "https://dragon-news-project-five.vercel.app/category/01",
     githubUrl: "https://github.com/surayaafroze",
     features: ["Dynamic Routing", "Firebase Auth", "Content CMS", "Search Functionality", "Dark Mode Support"],
+    challenges: "Designing an intuitive category routing system that handles dynamic subcategories without reloading the page required extensive use of React Router. Optimizing image loading for heavy content pages to maintain good Lighthouse scores was challenging.",
+    futurePlans: "I intend to integrate a rich text editor for easier content creation and add a personalized recommendation engine based on reading history. A newsletter subscription feature is also planned.",
   },
   {
     id: "digitools",
@@ -46,6 +52,8 @@ export const projects = [
     liveUrl: "https://digitools-platform-react.netlify.app/",
     githubUrl: "https://github.com/surayaafroze",
     features: ["Client-side Processing", "PWA Support", "Custom Hooks", "Theme Sync", "Offline Mode"],
+    challenges: "Running heavy data formatting and processing entirely on the client-side without locking up the UI thread required careful optimization. Building offline PWA capabilities that work consistently across different browsers was another complex task.",
+    futurePlans: "I am working on adding more developer-focused tools like regex testers, code minifiers, and API mock generators. Eventually, I'd like to implement an extension ecosystem so users can add their own custom tools.",
   },
   {
     id: "job-tracker",
@@ -58,5 +66,7 @@ export const projects = [
     liveUrl: "https://job-application-tracker-javascript.netlify.app/",
     githubUrl: "https://github.com/surayaafroze",
     features: ["Kanban Board", "Interview Calendar", "Resume Manager", "Analytics", "Notification System"],
+    challenges: "Implementing a performant drag-and-drop Kanban board from scratch using vanilla JavaScript and HTML5 APIs was quite complex. Ensuring the data structure remained flexible enough to handle various hiring stages required deep architectural planning.",
+    futurePlans: "Future features include a resume builder, automated email parsing to update application statuses directly from the inbox, and interview preparation modules integrated with AI.",
   },
 ];

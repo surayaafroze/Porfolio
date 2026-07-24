@@ -124,16 +124,40 @@ export default function ProjectDetail() {
       <section className="py-20 bg-slate-50 dark:bg-[#0f0f0f]">
         <div className="container mx-auto max-w-7xl px-6 md:px-12">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-16">
-            <div className="lg:col-span-7">
-              <h2 className="font-outfit text-3xl md:text-4xl font-bold text-slate-900 dark:text-white mb-8">
-                The <span className="text-gradient">Challenge</span>
-              </h2>
-              <p className="text-slate-700 dark:text-slate-300 text-lg md:text-xl leading-relaxed font-light mb-8">
-                {project.detailedDescription}
-              </p>
-              <p className="text-slate-600 dark:text-slate-400 text-base leading-relaxed">
-                This project was built to solve real-world problems using modern web technologies. Every line of code was written with performance, scalability, and user experience in mind. The design follows a minimalist philosophy, ensuring that the content remains the primary focus.
-              </p>
+            <div className="lg:col-span-7 space-y-12">
+              <div>
+                <h2 className="font-outfit text-3xl md:text-4xl font-bold text-slate-900 dark:text-white mb-6">
+                  Project <span className="text-gradient">Overview</span>
+                </h2>
+                <p className="text-slate-700 dark:text-slate-300 text-lg md:text-xl leading-relaxed font-light mb-6">
+                  {project.detailedDescription}
+                </p>
+                <p className="text-slate-600 dark:text-slate-400 text-base leading-relaxed">
+                  This project was built to solve real-world problems using modern web technologies. Every line of code was written with performance, scalability, and user experience in mind. The design follows a minimalist philosophy, ensuring that the content remains the primary focus.
+                </p>
+              </div>
+
+              {project.challenges && (
+                <div>
+                  <h2 className="font-outfit text-3xl md:text-4xl font-bold text-slate-900 dark:text-white mb-6">
+                    Challenges <span className="text-gradient">Faced</span>
+                  </h2>
+                  <p className="text-slate-700 dark:text-slate-300 text-lg leading-relaxed font-light">
+                    {project.challenges}
+                  </p>
+                </div>
+              )}
+
+              {project.futurePlans && (
+                <div>
+                  <h2 className="font-outfit text-3xl md:text-4xl font-bold text-slate-900 dark:text-white mb-6">
+                    Future <span className="text-gradient">Plans</span>
+                  </h2>
+                  <p className="text-slate-700 dark:text-slate-300 text-lg leading-relaxed font-light">
+                    {project.futurePlans}
+                  </p>
+                </div>
+              )}
             </div>
             <div className="lg:col-span-5">
               <div className="bg-white dark:bg-[#111111] p-10 rounded-[2rem] shadow-xl border border-slate-100 dark:border-slate-800">

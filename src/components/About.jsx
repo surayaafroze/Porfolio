@@ -47,11 +47,11 @@ export default function About() {
               <User size={24} />
             </div>
             <h3 className="font-outfit text-2xl font-bold text-slate-900 dark:text-white mb-4">
-              Passionate Frontend Developer
+              Passionate MERN Stack Developer
             </h3>
             <div className="space-y-4 text-slate-800 dark:text-slate-200 leading-relaxed font-light text-lg">
               <p>
-                I am a dedicated frontend developer focused on building modern, animated, and user-friendly web experiences using React, Next.js, and modern web technologies.
+                I am a dedicated MERN stack developer focused on building modern, animated, and user-friendly web experiences using React, Next.js, and modern web technologies.
               </p>
               <p>
                 My programming journey started out of a deep curiosity for how websites come to life. Over the years, I've transformed that curiosity into a career, moving from building simple static pages to crafting complex, full-featured web applications. I truly enjoy the intersection of logic and design.

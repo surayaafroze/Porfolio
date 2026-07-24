@@ -5,7 +5,7 @@ import MagneticButton from "./MagneticButton";
 import { ArrowRight, Download } from "lucide-react";
 
 export default function Hero() {
-  const text = "I'm Suraya, a Frontend Web Developer.".split(" ");
+  const text = "I'm Suraya, a MERN Stack Developer.".split(" ");
 
   return (
     <section
@@ -42,7 +42,7 @@ export default function Hero() {
                     duration: 0.8,
                     ease: [0.2, 0.65, 0.3, 0.9],
                   }}
-                  className={word === "Frontend" || word === "Developer." ? "text-gradient block" : "block"}
+                  className={word === "MERN" || word === "Stack" || word === "Developer." ? "text-gradient block" : "block"}
                 >
                   {word}
                 </motion.span>
@@ -55,7 +55,7 @@ export default function Hero() {
               transition={{ delay: 0.8, duration: 0.8 }}
               className="text-base md:text-xl text-slate-800 dark:text-slate-200 max-w-xl mb-10 md:mb-12 leading-relaxed font-light"
             >
-              Passionate frontend developer focused on building visually engaging interfaces with smooth interactions and premium UI design.
+              Passionate MERN stack developer focused on building visually engaging interfaces with smooth interactions and premium UI design.
             </motion.p>
 
             <motion.div
@@ -105,23 +105,6 @@ export default function Hero() {
                   className="w-full h-full object-cover object-center"
                 />
               </div>
-
-              {/* Floating Badge */}
-              <motion.div 
-                initial={{ opacity: 0, scale: 0 }}
-                animate={{ opacity: 1, scale: 1 }}
-                transition={{ delay: 1.2, duration: 0.6, type: "spring", bounce: 0.5 }}
-                className="absolute -bottom-2 -right-2 sm:bottom-4 sm:right-4 bg-white dark:bg-[#111] p-3 sm:p-4 rounded-xl sm:rounded-2xl shadow-xl border border-slate-100 dark:border-slate-800 flex items-center gap-3 sm:gap-4 z-20"
-              >
-                <div className="w-8 h-8 sm:w-10 sm:h-10 rounded-full bg-primary/10 flex items-center justify-center text-primary font-bold text-base sm:text-xl">
-                  🚀
-                </div>
-                <div>
-                  <p className="text-[8px] sm:text-xs text-slate-600 dark:text-slate-400 font-medium">Available for</p>
-                  <p className="text-[10px] sm:text-sm font-bold text-slate-900 dark:text-white">Freelance</p>
-                </div>
-              </motion.div>
-            </div>
           </motion.div>
 
         </div>

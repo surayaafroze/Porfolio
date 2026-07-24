@@ -66,22 +66,22 @@ export default function Hero() {
             >
               <MagneticButton className="w-full sm:w-auto">
                 <a
-                  href="#projects"
+                  href="/resume.pdf"
+                  download
                   className="group flex items-center justify-center gap-3 px-8 py-4 bg-primary text-white font-medium rounded-full hover:bg-primary-dark transition-all duration-300 shadow-[0_0_40px_rgba(0,153,153,0.3)] w-full sm:w-auto"
                 >
-                  View Projects
-                  <ArrowRight size={18} className="group-hover:translate-x-1 transition-transform" />
+                  Download Resume
+                  <Download size={18} className="group-hover:-translate-y-1 transition-transform" />
                 </a>
               </MagneticButton>
 
               <MagneticButton className="w-full sm:w-auto">
                 <a
-                  href="/resume.pdf"
-                  download
+                  href="#projects"
                   className="group flex items-center justify-center gap-3 px-8 py-4 bg-transparent dark:bg-[#111111] text-slate-900 dark:text-white border border-slate-300 dark:border-slate-800 font-medium rounded-full hover:border-primary dark:hover:border-primary transition-all duration-300 w-full sm:w-auto"
                 >
-                  Download Resume
-                  <Download size={18} className="group-hover:-translate-y-1 transition-transform" />
+                  View Projects
+                  <ArrowRight size={18} className="group-hover:translate-x-1 transition-transform" />
                 </a>
               </MagneticButton>
 

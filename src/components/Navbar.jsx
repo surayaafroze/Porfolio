@@ -3,7 +3,7 @@
 import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { useTheme } from "next-themes";
-import { Sun, Moon, Menu, X, ArrowUpRight } from "lucide-react";
+import { Sun, Moon, Menu, X, ArrowUpRight, Download } from "lucide-react";
 
 const links = [
   { label: "Home", href: "#home" },
@@ -108,9 +108,10 @@ export default function Navbar() {
               <a
                 href="/resume.pdf"
                 download
-                className="hidden md:inline-flex items-center justify-center px-6 py-2.5 text-sm font-medium text-white bg-primary rounded-full hover:bg-primary-dark transition-colors duration-300 shadow-sm shadow-primary/20"
+                className="group hidden md:inline-flex items-center justify-center gap-2 px-6 py-2.5 text-sm font-medium text-white bg-primary rounded-full hover:bg-primary-dark transition-colors duration-300 shadow-sm shadow-primary/20"
               >
-                Download Resume
+                Resume
+                <Download size={16} className="group-hover:-translate-y-0.5 transition-transform" />
               </a>
 
               {/* Mobile Menu Toggle */}
@@ -172,9 +173,10 @@ export default function Navbar() {
                     href="/resume.pdf"
                     download
                     onClick={() => setIsOpen(false)}
-                    className="inline-flex items-center justify-center w-full py-4 bg-primary text-white text-lg font-bold rounded-2xl shadow-lg shadow-primary/20"
+                    className="group inline-flex items-center justify-center gap-2 w-full py-4 bg-primary text-white text-lg font-bold rounded-2xl shadow-lg shadow-primary/20"
                   >
-                    Download Resume
+                    Resume
+                    <Download size={20} className="group-hover:-translate-y-1 transition-transform" />
                   </a>
                 </motion.div>
               </div>

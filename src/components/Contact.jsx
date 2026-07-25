@@ -96,13 +96,13 @@ export default function Contact() {
                 </div>
               </div>
 
-              <a href="tel:+8801XXXXXXXXX" className="flex items-center gap-6 group">
+              <a href="tel:+8801777980628" className="flex items-center gap-6 group">
                 <div className="w-14 h-14 rounded-2xl bg-slate-50 dark:bg-slate-800/50 flex items-center justify-center group-hover:bg-primary group-hover:text-white text-primary transition-all duration-300 shadow-sm border border-slate-100 dark:border-slate-800">
                   <FiPhone size={24} className="transition-colors" />
                 </div>
                 <div>
                   <div className="text-xs font-semibold text-slate-700 dark:text-slate-300 uppercase tracking-wider mb-1">Phone</div>
-                  <div className="text-lg font-medium text-slate-900 dark:text-white group-hover:text-primary dark:group-hover:text-primary transition-colors">+880 1XXX-XXXXXX</div>
+                  <div className="text-lg font-medium text-slate-900 dark:text-white group-hover:text-primary dark:group-hover:text-primary transition-colors">+880 1777-980628</div>
                 </div>
               </a>
 

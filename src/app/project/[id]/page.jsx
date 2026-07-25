@@ -11,23 +11,35 @@ import Link from "next/link";
 import { useEffect, useState } from "react";
 
 export default function ProjectDetail() {
-  const { id } = useParams();
+  const params = useParams();
   const router = useRouter();
-  const [projectIndex, setProjectIndex] = useState(-1);
+  const id = params?.id;
+
+  const projectIndex = projects.findIndex(p => p.id === id);
+  const isFound = projectIndex !== -1;
+  const project = isFound ? projects[projectIndex] : projects[0];
+  const nextProject = projects[((isFound ? projectIndex : 0) + 1) % projects.length];
 
   useEffect(() => {
-    const index = projects.findIndex(p => p.id === id);
-    if (index === -1) {
-      router.push("/");
-    } else {
-      setProjectIndex(index);
+    if (id && !isFound) {
+      router.push("/#projects");
     }
-  }, [id, router]);
+  }, [id, isFound, router]);
 
-  if (projectIndex === -1) return null;
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, [id]);
 
-  const project = projects[projectIndex];
-  const nextProject = projects[(projectIndex + 1) % projects.length];
+  if (!id) {
+    return (
+      <main className="min-h-screen bg-white dark:bg-[#0a0a0a] flex items-center justify-center">
+        <div className="text-center">
+          <div className="w-12 h-12 border-4 border-primary border-t-transparent rounded-full animate-spin mx-auto mb-4" />
+          <p className="text-slate-500">Loading project details...</p>
+        </div>
+      </main>
+    );
+  }
 
   return (
     <main className="min-h-screen bg-white dark:bg-[#0a0a0a] transition-colors duration-500">

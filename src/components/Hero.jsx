@@ -105,6 +105,7 @@ export default function Hero() {
                   className="w-full h-full object-cover object-center"
                 />
               </div>
+            </div>
           </motion.div>
 
         </div>

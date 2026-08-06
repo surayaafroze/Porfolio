@@ -76,6 +76,19 @@ export default function Hero() {
 
               <MagneticButton className="w-full sm:w-auto">
                 <a
+                  href="/resume.pdf"
+                  download="Suraya_Afroze_Resume.pdf"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="group flex items-center justify-center gap-3 px-8 py-4 bg-transparent dark:bg-[#111111] text-slate-900 dark:text-white border border-slate-300 dark:border-slate-800 font-medium rounded-full hover:border-primary dark:hover:border-primary hover:text-primary dark:hover:text-primary transition-all duration-300 w-full sm:w-auto"
+                >
+                  Download Resume
+                  <Download size={18} className="group-hover:-translate-y-0.5 transition-transform" />
+                </a>
+              </MagneticButton>
+
+              <MagneticButton className="w-full sm:w-auto">
+                <a
                   href="#contact"
                   className="group flex items-center justify-center gap-3 px-8 py-4 bg-transparent dark:bg-[#111111] text-slate-900 dark:text-white border border-slate-300 dark:border-slate-800 font-medium rounded-full hover:border-primary dark:hover:border-primary transition-all duration-300 w-full sm:w-auto"
                 >

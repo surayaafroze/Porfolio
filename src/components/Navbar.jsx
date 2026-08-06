@@ -107,7 +107,9 @@ export default function Navbar() {
               {/* CTA Desktop */}
               <a
                 href="/resume.pdf"
-                download
+                download="Suraya_Afroze_Resume.pdf"
+                target="_blank"
+                rel="noopener noreferrer"
                 className="group hidden md:inline-flex items-center justify-center gap-2 px-6 py-2.5 text-sm font-medium text-white bg-primary rounded-full hover:bg-primary-dark transition-colors duration-300 shadow-sm shadow-primary/20"
               >
                 Resume
@@ -171,7 +173,9 @@ export default function Navbar() {
                 >
                   <a
                     href="/resume.pdf"
-                    download
+                    download="Suraya_Afroze_Resume.pdf"
+                    target="_blank"
+                    rel="noopener noreferrer"
                     onClick={() => setIsOpen(false)}
                     className="group inline-flex items-center justify-center gap-2 w-full py-4 bg-primary text-white text-lg font-bold rounded-2xl shadow-lg shadow-primary/20"
                   >

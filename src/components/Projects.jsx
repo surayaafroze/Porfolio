@@ -46,7 +46,9 @@ export default function Projects() {
               <Link href={`/project/${p.id}`} className="relative aspect-video sm:aspect-auto sm:h-56 lg:h-64 mb-6 overflow-hidden rounded-2xl border border-slate-200 dark:border-slate-800 block">
                 <img 
                   src={p.image} 
-                  alt={p.title} 
+                  alt={p.title}
+                  loading="lazy"
+                  decoding="async" 
                   className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-6">
@@ -57,15 +59,15 @@ export default function Projects() {
               </Link>
 
               <div className="relative z-10 flex-grow">
-                <div className="flex justify-between items-start mb-4">
-                  <div className="flex flex-wrap gap-2">
-                    {p.tags.slice(0, 2).map(tag => (
+                <div className="flex justify-between items-start gap-2 mb-4">
+                  <div className="flex flex-wrap gap-1.5">
+                    {p.tags.map(tag => (
                       <span key={tag} className="bg-primary/10 dark:bg-primary/20 text-primary px-3 py-1 rounded-full text-xs font-semibold uppercase tracking-wider">
                         {tag}
                       </span>
                     ))}
                   </div>
-                  <span className="text-slate-400 dark:text-slate-500 font-outfit text-sm font-bold">{p.year}</span>
+                  <span className="text-slate-400 dark:text-slate-500 font-outfit text-sm font-bold shrink-0">{p.year}</span>
                 </div>
 
                 <h3 className="text-2xl font-bold text-slate-900 dark:text-white leading-tight mb-3 group-hover:text-primary transition-colors duration-300">

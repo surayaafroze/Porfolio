@@ -2,7 +2,7 @@
 
 import { motion } from "framer-motion";
 import { useState } from "react";
-import { FiMail, FiMapPin, FiGithub, FiLinkedin, FiPhone } from "react-icons/fi";
+import { FiMail, FiMapPin, FiGithub, FiLinkedin, FiPhone, FiCheckCircle } from "react-icons/fi";
 
 export default function Contact() {
   const [form, setForm] = useState({
@@ -10,15 +10,25 @@ export default function Contact() {
     email: "",
     message: "",
   });
+  const [status, setStatus] = useState(null); // null | 'submitting' | 'success' | 'error'
 
   const handleSubmit = (e) => {
     e.preventDefault();
     if (!form.name || !form.email || !form.message) {
-      alert("Please fill all fields");
+      setStatus("error");
       return;
     }
-    alert("Message sent successfully 🚀");
-    setForm({ name: "", email: "", message: "" });
+    
+    setStatus("submitting");
+
+    // Simulate form submission process
+    setTimeout(() => {
+      setStatus("success");
+      setForm({ name: "", email: "", message: "" });
+      
+      // Clear success notification after 5 seconds
+      setTimeout(() => setStatus(null), 5000);
+    }, 600);
   };
 
   return (
@@ -138,12 +148,35 @@ export default function Contact() {
           >
             {/* Form decorative element */}
             <div className="absolute top-0 right-0 w-24 h-24 bg-primary/5 dark:bg-primary/10 rounded-bl-full pointer-events-none" />
+
+            {/* Notification message */}
+            {status === "success" && (
+              <motion.div 
+                initial={{ opacity: 0, y: -10 }} 
+                animate={{ opacity: 1, y: 0 }} 
+                className="mb-6 p-4 rounded-xl bg-teal-500/10 border border-teal-500/20 text-teal-600 dark:text-teal-400 flex items-center gap-3 text-sm font-medium"
+              >
+                <FiCheckCircle size={20} className="shrink-0" />
+                <span>Message sent successfully! I'll get back to you soon. 🚀</span>
+              </motion.div>
+            )}
+
+            {status === "error" && (
+              <motion.div 
+                initial={{ opacity: 0, y: -10 }} 
+                animate={{ opacity: 1, y: 0 }} 
+                className="mb-6 p-4 rounded-xl bg-red-500/10 border border-red-500/20 text-red-600 dark:text-red-400 text-sm font-medium"
+              >
+                Please fill out all required fields before submitting.
+              </motion.div>
+            )}
             
             <form onSubmit={handleSubmit} className="space-y-6 relative z-10">
               <div className="relative">
                 <input
                   id="name"
                   type="text"
+                  required
                   placeholder=" "
                   value={form.name}
                   onChange={(e) => setForm({ ...form, name: e.target.value })}
@@ -161,6 +194,7 @@ export default function Contact() {
                 <input
                   id="email"
                   type="email"
+                  required
                   placeholder=" "
                   value={form.email}
                   onChange={(e) => setForm({ ...form, email: e.target.value })}
@@ -177,6 +211,7 @@ export default function Contact() {
               <div className="relative">
                 <textarea
                   id="message"
+                  required
                   placeholder=" "
                   rows={5}
                   value={form.message}
@@ -192,12 +227,17 @@ export default function Contact() {
               </div>
 
               <motion.button
-                whileHover={{ scale: 1.02 }}
-                whileTap={{ scale: 0.98 }}
+                whileHover={{ scale: status === "submitting" ? 1 : 1.02 }}
+                whileTap={{ scale: status === "submitting" ? 1 : 0.98 }}
                 type="submit"
-                className="w-full py-4 bg-primary text-white font-semibold rounded-xl shadow-[0_0_20px_rgba(0,153,153,0.3)] hover:bg-primary-dark transition-colors duration-300 text-lg flex justify-center items-center gap-2"
+                disabled={status === "submitting"}
+                className="w-full py-4 bg-primary text-white font-semibold rounded-xl shadow-[0_0_20px_rgba(0,153,153,0.3)] hover:bg-primary-dark transition-colors duration-300 text-lg flex justify-center items-center gap-2 disabled:opacity-70 disabled:cursor-not-allowed"
               >
-                Send Message <span>🚀</span>
+                {status === "submitting" ? (
+                  <span>Sending...</span>
+                ) : (
+                  <>Send Message <span>🚀</span></>
+                )}
               </motion.button>
             </form>
           </motion.div>

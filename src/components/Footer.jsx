@@ -34,7 +34,7 @@ export default function Footer() {
               <a href="https://www.linkedin.com/in/suraya-afroze/" target="_blank" rel="noreferrer" className="w-10 h-10 rounded-full bg-slate-800 dark:bg-slate-800/50 flex items-center justify-center text-slate-400 hover:text-white hover:bg-primary transition-all duration-300" aria-label="LinkedIn">
                 <FiLinkedin size={18} />
               </a>
-              <a href="#" className="w-10 h-10 rounded-full bg-slate-800 dark:bg-slate-800/50 flex items-center justify-center text-slate-400 hover:text-white hover:bg-primary transition-all duration-300" aria-label="Facebook">
+              <a href="https://facebook.com" target="_blank" rel="noreferrer" className="w-10 h-10 rounded-full bg-slate-800 dark:bg-slate-800/50 flex items-center justify-center text-slate-400 hover:text-white hover:bg-primary transition-all duration-300" aria-label="Facebook">
                 <FiFacebook size={18} />
               </a>
             </div>

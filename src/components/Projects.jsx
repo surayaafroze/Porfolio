@@ -3,6 +3,7 @@
 import { motion } from "framer-motion";
 import { FiGithub } from "react-icons/fi";
 import Link from "next/link";
+import Image from "next/image";
 import { projects } from "@/data/projects";
 
 export default function Projects() {
@@ -44,14 +45,15 @@ export default function Projects() {
             >
               {/* Image Preview */}
               <Link href={`/project/${p.id}`} className="relative aspect-video sm:aspect-auto sm:h-56 lg:h-64 mb-6 overflow-hidden rounded-2xl border border-slate-200 dark:border-slate-800 block">
-                <img 
+                <Image 
                   src={p.image} 
                   alt={p.title}
-                  loading="lazy"
-                  decoding="async" 
-                  className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+                  fill
+                  sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 600px"
+                  quality={85}
+                  className="object-cover transition-transform duration-700 group-hover:scale-110"
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-6">
+                <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-6 z-10">
                   <span className="text-white text-sm font-bold flex items-center gap-2">
                     Click to view details <ArrowRight size={14} />
                   </span>

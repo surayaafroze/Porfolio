@@ -8,6 +8,7 @@ import { FiGithub } from "react-icons/fi";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import Link from "next/link";
+import Image from "next/image";
 import { useEffect, useState } from "react";
 
 export default function ProjectDetail() {
@@ -122,10 +123,14 @@ export default function ProjectDetail() {
               transition={{ duration: 1, delay: 0.2 }}
               className="relative aspect-video rounded-[2rem] overflow-hidden shadow-2xl border border-slate-200 dark:border-slate-800"
             >
-              <img 
+              <Image 
                 src={project.image} 
                 alt={project.title} 
-                className="w-full h-full object-cover"
+                fill
+                priority
+                sizes="(max-width: 1200px) 100vw, 1200px"
+                quality={85}
+                className="object-cover"
               />
             </motion.div>
           </div>

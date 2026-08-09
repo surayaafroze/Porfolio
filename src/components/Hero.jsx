@@ -1,6 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
+import Image from "next/image";
 import MagneticButton from "./MagneticButton";
 import { ArrowRight } from "lucide-react";
 
@@ -97,12 +98,16 @@ export default function Hero() {
               <div className="absolute inset-0 rounded-full border-2 border-primary/20 dark:border-primary/10 animate-[spin_10s_linear_infinite]" />
               <div className="absolute -inset-4 rounded-full border border-primary/10 dark:border-primary/5 animate-[spin_15s_linear_infinite_reverse]" />
               
-              <div className="absolute inset-2 rounded-full overflow-hidden bg-slate-100 dark:bg-slate-800 border-4 border-white dark:border-[#0a0a0a] shadow-2xl">
+              <div className="absolute inset-2 rounded-full overflow-hidden bg-slate-100 dark:bg-slate-800 border-4 border-white dark:border-[#0a0a0a] shadow-2xl relative">
                 {/* Image */}
-                <img 
-                  src="https://i.postimg.cc/KzBXqNnc/Untitled-design-(2)-2.jpg" 
+                <Image 
+                  src="/hero-profile.jpg" 
                   alt="Suraya Afroze" 
-                  className="w-full h-full object-cover object-center"
+                  fill
+                  priority
+                  sizes="(max-width: 640px) 192px, (max-width: 768px) 256px, (max-width: 1024px) 320px, 450px"
+                  quality={90}
+                  className="object-cover object-center"
                 />
               </div>
             </div>

@@ -98,7 +98,7 @@ export default function Hero() {
               <div className="absolute inset-0 rounded-full border-2 border-primary/20 dark:border-primary/10 animate-[spin_10s_linear_infinite]" />
               <div className="absolute -inset-4 rounded-full border border-primary/10 dark:border-primary/5 animate-[spin_15s_linear_infinite_reverse]" />
               
-              <div className="absolute inset-2 rounded-full overflow-hidden bg-slate-100 dark:bg-slate-800 border-4 border-white dark:border-[#0a0a0a] shadow-2xl relative">
+              <div className="absolute inset-2 rounded-full overflow-hidden bg-slate-100 dark:bg-slate-800 border-4 border-white dark:border-[#0a0a0a] shadow-2xl">
                 {/* Image */}
                 <Image 
                   src="/hero-profile.jpg" 
